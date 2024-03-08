@@ -1,5 +1,6 @@
 package com.grupo04pj01.urna.interfaceeleitor.services.impl;
 
+import com.grupo04pj01.urna.interfaceeleitor.DTO.EnvioVotoBrancoDTO;
 import com.grupo04pj01.urna.interfaceeleitor.DTO.EnvioVotoDTO;
 import com.grupo04pj01.urna.interfaceeleitor.DTO.ResponseLiberacaoUrnaDTO;
 import com.grupo04pj01.urna.interfaceeleitor.services.VotarService;
@@ -36,4 +37,5 @@ public class VotarServiceImpl implements VotarService {
 
         ResponseEntity<String> envio= restTemplate.postForEntity("http://localhost:8080/voto", requestEntity, String.class);
     }
+
 }
