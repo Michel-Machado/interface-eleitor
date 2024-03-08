@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class VotarServiceImpl implements VotarService {
 
+
     private final RestTemplate restTemplate;
 
     @Override
