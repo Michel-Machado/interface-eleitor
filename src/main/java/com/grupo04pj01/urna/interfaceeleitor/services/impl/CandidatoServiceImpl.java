@@ -31,7 +31,7 @@ public class CandidatoServiceImpl implements CandidatoService {
 
     @Override
     public CandidatoDTO findCandidato(BuscaCandidatoDTO buscaCandidatoDTO) {
-
+        String url = "http://localhost:8080/candidato/" + buscaCandidatoDTO.getChapa().toString();
         JSONObject body= new JSONObject();
         body.put("chapa",buscaCandidatoDTO.getChapa());
 
@@ -39,7 +39,7 @@ public class CandidatoServiceImpl implements CandidatoService {
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> requestEntity = new HttpEntity<String>(body.toString(),httpHeaders);
 
-        ResponseEntity<CandidatoDTO> busca= restTemplate.postForEntity("http://localhost:8080/candidato/busca", requestEntity, CandidatoDTO.class);
+        ResponseEntity<CandidatoDTO> busca= restTemplate.postForEntity(url, requestEntity, CandidatoDTO.class);
 
         return busca.getBody();
     }
