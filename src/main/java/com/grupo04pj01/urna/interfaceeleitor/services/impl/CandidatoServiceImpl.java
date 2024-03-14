@@ -44,5 +44,4 @@ public class CandidatoServiceImpl implements CandidatoService {
         return busca.getBody();
     }
 
-
 }
